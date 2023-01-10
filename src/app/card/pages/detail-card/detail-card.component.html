@@ -1,0 +1,80 @@
+
+
+<div *ngIf="!card; else divCard"  
+class="alert alert-info">
+Wait please...
+</div>
+
+
+<ng-template #divCard>
+
+<div class="row">
+    <div class="col-12">
+        <h1>Name: <small>{{ card.name }}</small></h1>
+    </div>
+</div>
+
+<div class="row">
+    
+    <div class="col-4">
+        <h3>Card</h3>
+        <img [src]="card.card_images[0].image_url" class="img-thumbnail" />
+    </div>
+
+    <div class="col">
+        <h3>Detail</h3>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>Type: </strong> {{ card.type  }}
+            </li>
+          
+            <li class="list-group-item">
+                <strong>Race: </strong> {{ card.race }}
+            </li>
+
+            <li class="list-group-item">
+                <strong>Atk / Def:</strong> {{ card.atk }} / {{ card.def }}
+            </li>
+
+            <li class="list-group-item">
+                <strong>Level: </strong> {{ card.level }}
+            </li>
+
+            <li class="list-group-item">
+                <strong>Attribute: </strong> {{ card.attribute }}
+            </li>
+
+            <li class="list-group-item">
+                <strong>Archetype: </strong> {{ card.archetype }}
+            </li>
+
+
+            <li class="list-group-item">
+                <strong>Description: </strong> {{ card.desc }}
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+<h3>Card Prices</h3>
+<div class="row">
+    <div class="col">
+       
+        <span class="badge bg-primary mr-1">Card Market {{ card.card_prices[0].cardmarket_price | currency }}</span>
+        <span class="badge bg-primary mr-1">TCG Player{{ card.card_prices[0].tcgplayer_price | currency }}</span>
+        <span class="badge bg-primary mr-1">Ebay {{ card.card_prices[0].ebay_price  | currency}}</span>
+        <span class="badge bg-primary mr-1">Amazon {{ card.card_prices[0].amazon_price  | currency}}</span>
+        <span class="badge bg-primary mr-1">Cool Stuffinc {{ card.card_prices[0].coolstuffinc_price | currency }}</span>
+      
+
+    </div>
+</div>
+
+
+
+
+</ng-template>
+

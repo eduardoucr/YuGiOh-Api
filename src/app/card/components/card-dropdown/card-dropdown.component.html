@@ -1,0 +1,23 @@
+<div *ngIf="!cardSets; else divCard"  
+class="alert alert-info">
+Wait please...
+</div>
+
+
+<ng-template #divCard>
+<div class="col">
+        <select 
+        class="form-control"
+        [(ngModel)]="targetSearch"
+        (ngModelChange)="search()"
+        >
+        <option >
+           Select Card Set Collection
+        </option>
+            <option *ngFor="let card of cardSets">
+                {{ card.set_name }}
+            </option>
+        </select>
+</div>
+</ng-template>
+

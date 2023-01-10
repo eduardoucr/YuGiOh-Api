@@ -1,0 +1,35 @@
+
+
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h3>Search by Attribute <small>{{attributeActivate | titlecase}}</small></h3>
+    <hr>
+    <h5>Select the attribute</h5>
+    <div class="row">
+        <div class="col">
+            <button 
+            
+                 *ngFor="let attribute of attributes"
+                [class]="getClassCSS(attribute)"
+                (click)="triggerAttribute(attribute)"
+                >
+                <img src="../../assets//40px-{{attribute}}.svg.png" />
+                        {{attribute | titlecase}}
+            </button>
+        </div>
+    </div>
+</div>
+
+<div  *ngIf="messageAlert" >
+    <div class="alert alert-info">
+        Wait please...
+    </div>
+</div>
+
+
+
+<div *ngIf="cards.length > 0" class="row">
+    <div class="col">
+        <app-card-tabla [cards]="cards"></app-card-tabla>
+    </div>
+</div>
+

@@ -1,0 +1,58 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2>By Name</h2>
+    <hr>
+    
+    <div class="row">
+        <div class="col">
+            <app-card-input
+                (onEnter)="search( $event )"
+                (onDebounce)="suggestions( $event )"
+                placeholder="Search card..."
+      
+                >
+                
+            </app-card-input>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<ul 
+*ngIf="showSuggestions"
+class="list-group">
+    <li *ngFor="let card of dataSuggested"
+    class="list-group-item list-group-item-action">
+       <a class="nav-link"
+       [routerLink]="['/detail', card.id]">
+    {{card.name}}
+    </a>
+    </li>
+
+    <li 
+    class="list-group-item list-group-item-action"
+    (click)="searchSugerido(targetSearch)"
+    >
+       <a class="nav-link">
+        Search "{{targetSearch}}"
+       </a>
+     
+    
+    </li>
+</ul>
+
+<hr>
+<div *ngIf="hayError" 
+     class="alert alert-danger">
+     Nothing found with the term {{ targetSearch }}
+</div>
+
+<div *ngIf="data.length > 0" class="row">
+    <div class="col">
+
+        <app-card-tabla [cards]="data"></app-card-tabla>
+
+
+    </div>
+</div>

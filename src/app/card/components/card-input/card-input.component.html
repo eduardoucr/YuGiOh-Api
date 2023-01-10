@@ -1,0 +1,9 @@
+<form  (ngSubmit)="search()" autocomplete="off">
+    <input type ="text"
+            name="targetSearch"
+            class="form-control"
+            [(ngModel)]="targetSearch"
+            (input)="teclaPresionada ( $event )"
+            [placeholder]="placeholder"
+            />
+</form>

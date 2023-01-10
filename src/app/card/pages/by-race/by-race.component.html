@@ -1,0 +1,42 @@
+
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2>By race</h2>
+    <hr>
+    <div class="row">
+        <div 
+         clas="col">
+         <app-card-input
+      
+        (onEnter)="search( $event )"
+        placeholder="Search race"
+       
+           ></app-card-input>
+        </div>
+   </div>
+</div>
+
+
+<hr>
+
+<div 
+*ngIf="hayError"
+class="alert alert-danger">
+Nothing found with the term {{targetSearch}}
+</div>
+
+
+
+<div *ngIf="cards.length >0 "  
+class="row">
+
+ 
+    <div class="col">
+    <app-card-tabla [cards] ="cards"></app-card-tabla>
+    </div>
+
+
+
+</div>
+
+
+

@@ -1,0 +1,32 @@
+
+
+
+
+<div class="animate__animated animate__fadeIn animate__faster">
+
+    <h3>Search by Card Set: <small>{{targetSearch}}</small></h3>
+    <hr>
+    <h5>Select the Card Set </h5>
+    </div>
+        <div class="row">
+        <div class="col">
+            <app-card-dropdown
+            (onChange)="search( $event )"
+    
+            ></app-card-dropdown>
+               
+        </div>
+    
+    </div>
+    
+
+
+
+<div *ngIf="data.length > 0" class="row">
+    <div class="col">
+
+        <app-card-tabla [cards]="data"></app-card-tabla>
+
+
+    </div>
+</div>

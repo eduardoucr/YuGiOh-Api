@@ -1,0 +1,26 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th> # </th>
+            <th> Image </th>
+            <th> Name </th>
+            <th> Attribute </th>
+            <th> Race </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let card of cards; let i = index">
+            <td> {{ i + 1 }} </td>
+            <td>
+                <img class="small-flag" [src]="card.card_images[0].image_url_small" >
+            </td>
+            <td>  {{ card.name }}</td>
+            <td>  {{ card.attribute }}</td>
+            <td>  {{ card.race }}</td>
+            <td>
+                <a [routerLink]="['/detail', card.id]">Detail</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
