@@ -5,8 +5,6 @@ import { debounceTime, Subject } from 'rxjs';
   selector: 'app-card-input',
   templateUrl: './card-input.component.html'
 })
-
-
 export class CardInputComponent  implements OnInit{
   ngOnInit(): void {
    this.debouncer
